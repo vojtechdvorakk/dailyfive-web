@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DailyFive – pět zpráv dne každý večer v 18:00</title>
+  <meta name="description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji. Aplikace pro iPhone a Android bez reklam a bez účtu.">
+  <link rel="canonical" href="https://dailyfive.cz/">
+  <meta name="theme-color" content="#1C3D36">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="DailyFive">
+  <meta property="og:locale" content="cs_CZ">
+  <meta property="og:url" content="https://dailyfive.cz/">
+  <meta property="og:title" content="DailyFive – pět zpráv dne. Tečka.">
+  <meta property="og:description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji.">
+  <meta property="og:image" content="https://dailyfive.cz/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preload" href="/fonts/BricolageGrotesque-600SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MobileApplication",
+    "name": "DailyFive",
+    "operatingSystem": "iOS, Android",
+    "applicationCategory": "NewsApplication",
+    "inLanguage": "cs",
+    "description": "Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+    "author": { "@type": "Person", "name": "Vojtěch Dvořák", "url": "https://vojtechdvorak.cz" }
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#obsah">Přeskočit na obsah</a>
+  <header class="site-header">
+    <div class="wrap">
+      <a class="logo" href="/" aria-label="DailyFive – úvod">
+        <picture>
+          <source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)">
+          <img src="/assets/logo.svg" alt="DailyFive" width="166" height="38">
+        </picture>
+      </a>
+      <nav class="nav" aria-label="Hlavní">
+        <a href="#dnes">Dnešní pětka</a>
+        <a class="nav-extra" href="#jak">Jak to funguje</a>
+        <a href="/podpora/">Podpora</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="obsah">
+    <section class="hero">
+      <div class="wrap">
+        <div>
+          <p class="kicker">Aplikace pro iPhone a Android</p>
+          <h1>Pět zpráv dne<span class="dot">.</span><br>Tečka<span class="dot">.</span></h1>
+          <p class="lead">Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji. Za tři minuty máš přehled a názor si uděláš sám.</p>
+          <div class="badges" aria-label="Kde aplikaci najdeš">
+            <span class="badge"><small>Již brzy v</small><strong>App Store</strong></span>
+            <span class="badge"><small>Již brzy na</small><strong>Google Play</strong></span>
+          </div>
+          <p class="small">Zdarma. Bez reklam, bez účtu a bez sledování.</p>
+        </div>
+        <div class="phone">
+          <img src="/assets/app-home.jpg" alt="Ukázka aplikace DailyFive: dnešní pětka zpráv" width="780" height="1688" fetchpriority="high">
+        </div>
+      </div>
+    </section>
+
+    <section class="section today" id="dnes" aria-labelledby="dnes-nadpis">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker" data-edition-kicker>Dnešní vydání</p>
+          <h2 id="dnes-nadpis" data-edition-title>Dnešní pětka</h2>
+          <p class="today-meta" data-edition-date></p>
+        </div>
+        <ol class="stories" data-stories aria-live="polite">
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+          <li class="skeleton" aria-hidden="true"></li>
+        </ol>
+        <noscript><p>Dnešní pětku si přečteš v aplikaci DailyFive.</p></noscript>
+        <p class="today-note">Shrnutí píše umělá inteligence jen z uvedených zdrojů a druhé kolo AI je kontroluje. <a href="/redakcni-zasady/">Jak pracujeme</a></p>
+      </div>
+    </section>
+
+    <section class="section" id="jak" aria-labelledby="jak-nadpis">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Jak to funguje</p>
+          <h2 id="jak-nadpis">Jak vzniká pětka</h2>
+          <p class="sub">Celý den čteme za tebe. Večer dostaneš jen to podstatné.</p>
+        </div>
+        <ol class="steps">
+          <li class="step"><h3>Sběr</h3><p>Celý den sledujeme 29 českých i zahraničních redakcí, od ČT24 a iROZHLASU po Seznam Zprávy, Deník N a BBC.</p></li>
+          <li class="step"><h3>Výběr</h3><p>AI seskupí stovky článků podle událostí a vybere pět nejdůležitějších. Aspoň dvě jsou z Česka, když se doma stalo něco podstatného.</p></li>
+          <li class="step"><h3>Psaní</h3><p>Každou událost shrne krátce a neutrálně: jen fakta ze zdrojů, tvrzení přisouzená konkrétním lidem.</p></li>
+          <li class="step"><h3>Kontrola</h3><p>Druhé, nezávislé kolo AI porovná text se zdroji a opraví vše, co v nich nemá oporu.</p></li>
+          <li class="step is-time"><h3>18:00</h3><p>Pětka vyjde a přijde ti jedno upozornění. U každé zprávy najdeš odkazy na původní články.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="slib-nadpis">
+      <div class="wrap">
+        <div class="section-head">
+          <p class="kicker">Co slibujeme</p>
+          <h2 id="slib-nadpis">Méně, ale pořádně</h2>
+        </div>
+        <div class="promises">
+          <div class="promise"><h3>Pět zpráv. Ne víc.</h3><p>Kdo si přečte pětku, ví, co se ten den opravdu stalo. Bez nekonečného scrollování.</p></div>
+          <div class="promise"><h3>Jen fakta</h3><p>Žádné hodnocení, žádné emoce, žádné titulky lákající na kliknutí.</p></div>
+          <div class="promise"><h3>Vždy se zdroji</h3><p>U každé zprávy odkazujeme na redakce, které o ní psaly. Celý článek si přečteš u nich.</p></div>
+          <div class="promise"><h3>Otevřeně o AI</h3><p>Texty píše umělá inteligence a říkáme to u každé zprávy. Chybu nahlásíš jedním klepnutím.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="autor-nadpis">
+      <div class="wrap">
+        <div class="author">
+          <div class="avatar" aria-hidden="true">VD</div>
+          <div>
+            <p class="kicker" style="color: var(--sage)">Kdo za tím stojí</p>
+            <h2 id="autor-nadpis">Vojtěch Dvořák</h2>
+            <p class="bio">Ahoj, jsem Vojta. Dělám videa a grafiku a DailyFive je můj první vlastní produkt. Chtěl jsem aplikaci, která mi jednou denně řekne, co se opravdu stalo. Bez křiku, bez clickbaitu a bez nekonečného scrollování. Tak jsem ji začal stavět a celý vývoj natáčím.</p>
+            <div class="links">
+              <a href="https://vojtechdvorak.cz">vojtechdvorak.cz</a>
+              <a href="mailto:ahoj@dailyfive.cz">ahoj@dailyfive.cz</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p>© 2026 Vojtěch Dvořák · IČO 29998271 · <a href="mailto:ahoj@dailyfive.cz">ahoj@dailyfive.cz</a></p>
+      <nav aria-label="Patička">
+        <a href="/podpora/">Podpora</a>
+        <a href="/redakcni-zasady/">Redakční zásady</a>
+        <a href="/soukromi/">Zásady soukromí</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="/assets/edition.js" defer></script>
+</body>
+</html>
