@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://dailyfive.cz/</loc><changefreq>daily</changefreq></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://dailyfive.cz/</loc><lastmod>2026-10-29</lastmod><changefreq>daily</changefreq></url>
+  <url>
+    <loc>https://dailyfive.cz/autor/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <image:image><image:loc>https://dailyfive.cz/assets/autor/vojtech-dvorak-960.webp</image:loc></image:image>
+    <image:image><image:loc>https://dailyfive.cz/assets/autor/vojtech-dvorak-dubaj-960.webp</image:loc></image:image>
+    <image:image><image:loc>https://dailyfive.cz/assets/autor/vojtech-dvorak-vecer-960.webp</image:loc></image:image>
+  </url>
   <url><loc>https://dailyfive.cz/redakcni-zasady/</loc></url>
   <url><loc>https://dailyfive.cz/podpora/</loc></url>
   <url><loc>https://dailyfive.cz/soukromi/</loc></url>

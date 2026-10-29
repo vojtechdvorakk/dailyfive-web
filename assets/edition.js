@@ -42,6 +42,7 @@
 
   function renderStory(s, i) {
     var li = el("li");
+    li.style.setProperty("--i", i);
     var details = el("details", "story");
     if (i === 0) details.open = true;
     var summary = el("summary");
@@ -108,6 +109,8 @@
 
       list.textContent = "";
       edition.stories.forEach(function (s, i) { list.appendChild(renderStory(s, i)); });
+      // site.js z vydání doplní upozornění v telefonu a titulky ve scéně „hluk → klid“
+      document.dispatchEvent(new CustomEvent("dailyfive:edition", { detail: edition }));
     })
     .catch(function () {
       showMessage("Pětku se teď nepodařilo načíst. Zkus stránku obnovit za chvíli.");

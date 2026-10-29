@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>DailyFive – pět zpráv dne každý večer v 18:00</title>
-  <meta name="description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji. Aplikace pro iPhone a Android bez reklam a bez účtu.">
+  <meta name="description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a se zdroji. Aplikace pro iPhone bez reklam, bez přihlašování a bez sledování.">
   <link rel="canonical" href="https://dailyfive.cz/">
-  <meta name="theme-color" content="#1C3D36">
+  <meta name="theme-color" content="#0b1815">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <link rel="icon" href="/assets/favicon-96.png" sizes="96x96" type="image/png">
   <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -15,60 +15,213 @@
   <meta property="og:locale" content="cs_CZ">
   <meta property="og:url" content="https://dailyfive.cz/">
   <meta property="og:title" content="DailyFive – pět zpráv dne. Tečka.">
-  <meta property="og:description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji.">
+  <meta property="og:description" content="Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a se zdroji. Bez reklam a bez přihlašování.">
   <meta property="og:image" content="https://dailyfive.cz/assets/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="preload" href="/fonts/BricolageGrotesque-600SemiBold.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preconnect" href="https://dixctjxgghviroidbkyk.supabase.co" crossorigin>
   <link rel="stylesheet" href="/assets/styles.css">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "MobileApplication",
-    "name": "DailyFive",
-    "operatingSystem": "iOS, Android",
-    "applicationCategory": "NewsApplication",
-    "inLanguage": "cs",
-    "description": "Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji.",
-    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
-    "author": { "@type": "Person", "name": "Vojtěch Dvořák", "url": "https://vojtechdvorak.cz" }
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://dailyfive.cz/#web",
+        "url": "https://dailyfive.cz/",
+        "name": "DailyFive",
+        "inLanguage": "cs",
+        "publisher": { "@id": "https://dailyfive.cz/autor/#vojtech-dvorak" }
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://dailyfive.cz/#app",
+        "name": "DailyFive",
+        "url": "https://dailyfive.cz/",
+        "operatingSystem": "iOS",
+        "applicationCategory": "NewsApplication",
+        "inLanguage": "cs",
+        "description": "Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a se zdroji. Bez reklam, bez přihlašování a bez sledování.",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CZK" },
+        "author": { "@id": "https://dailyfive.cz/autor/#vojtech-dvorak" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://dailyfive.cz/autor/#vojtech-dvorak",
+        "name": "Vojtěch Dvořák",
+        "url": "https://dailyfive.cz/autor/",
+        "jobTitle": "Podnikatel a content creator",
+        "sameAs": [
+          "https://vojtechdvorak.cz/",
+          "https://www.tiktok.com/@vojtech.dvorak",
+          "https://www.instagram.com/vojtech.dvorakk/",
+          "https://www.linkedin.com/in/vojt%C4%9Bch-dvo%C5%99%C3%A1k-635702386/"
+        ]
+      }
+    ]
   }
   </script>
 </head>
 <body>
   <a class="skip" href="#obsah">Přeskočit na obsah</a>
-  <header class="site-header">
-    <div class="wrap">
-      <a class="logo" href="/" aria-label="DailyFive – úvod">
-        <picture>
-          <source srcset="/assets/logo-light.svg" media="(prefers-color-scheme: dark)">
-          <img src="/assets/logo.svg" alt="DailyFive" width="166" height="38">
-        </picture>
-      </a>
-      <nav class="nav" aria-label="Hlavní">
-        <a href="#dnes">Dnešní pětka</a>
-        <a class="nav-extra" href="#jak">Jak to funguje</a>
-        <a href="/podpora/">Podpora</a>
-      </nav>
-    </div>
-  </header>
+
+  <div class="night hero-wrap">
+    <header class="site-header on-dark">
+      <div class="wrap">
+        <a class="logo" href="/" aria-label="DailyFive – úvod"><img src="/assets/logo-light.svg" alt="DailyFive" width="166" height="38"></a>
+        <nav class="nav" aria-label="Hlavní">
+          <a href="#dnes">Dnešní pětka</a>
+          <a class="nav-extra" href="#jak">Jak to funguje</a>
+          <a href="/autor/">O autorovi</a>
+          <a href="/podpora/">Podpora</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero" aria-labelledby="uvod-nadpis">
+      <div class="wrap">
+        <div class="hero-text">
+          <p class="live-pill"><span class="pulse" aria-hidden="true"></span><span data-countdown>Pětka vychází každý den v 18:00</span></p>
+          <h1 id="uvod-nadpis">Pět zpráv dne<span class="dot">.</span><br>Tečka<span class="dot">.</span></h1>
+          <p class="lead">Každý večer v&nbsp;18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a&nbsp;vždy se zdroji. Přečteš je za tři minuty, klidně až před spaním.</p>
+          <div class="cta">
+            <span class="store-badge"><small>Již brzy v</small><strong>App Store</strong></span>
+            <a class="arrow-link" href="#dnes">Přečíst dnešní pětku</a>
+          </div>
+          <ul class="no-list" aria-label="Co v DailyFive nenajdeš">
+            <li>Bez reklam</li>
+            <li>Bez přihlašování</li>
+            <li>Bez sledování</li>
+          </ul>
+        </div>
+        <div class="hero-visual">
+          <div class="lamp" aria-hidden="true"></div>
+          <div class="phone float">
+            <div class="phone-screen">
+              <img src="/assets/app-home.jpg" alt="Aplikace DailyFive: dnešní pětka zpráv" width="780" height="1688" fetchpriority="high">
+              <div class="notif" data-notif aria-hidden="true">
+                <img class="notif-icon" src="/assets/apple-touch-icon.png" alt="" width="38" height="38">
+                <div>
+                  <p class="notif-top"><strong>DAILYFIVE</strong><span>teď</span></p>
+                  <p class="notif-title">Dnešní pětka je tady.</p>
+                  <p class="notif-text" data-notif-text>Pět nejdůležitějších událostí dne. Za tři minuty máš přehled.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
 
   <main id="obsah">
-    <section class="hero">
-      <div class="wrap">
-        <div>
-          <p class="kicker">Aplikace pro iPhone a Android</p>
-          <h1>Pět zpráv dne<span class="dot">.</span><br>Tečka<span class="dot">.</span></h1>
-          <p class="lead">Každý večer v 18:00 pět nejdůležitějších událostí dne. Stručně, neutrálně a vždy se zdroji. Za tři minuty máš přehled a názor si uděláš sám.</p>
-          <div class="badges" aria-label="Kde aplikaci najdeš">
-            <span class="badge"><small>Již brzy v</small><strong>App Store</strong></span>
-            <span class="badge"><small>Již brzy na</small><strong>Google Play</strong></span>
+    <section class="noise-section" id="proc" aria-labelledby="proc-nadpis">
+      <div class="noise-track" data-noise>
+        <div class="noise-sticky">
+          <div class="wrap noise-grid">
+            <div class="noise-copy">
+              <p class="kicker">Proč DailyFive</p>
+              <h2 id="proc-nadpis"><span class="h-before">Celý den hluk<span class="dot">.</span></span><br><span class="h-after">Večer klid<span class="dot">.</span></span></h2>
+              <div class="swap">
+                <p class="sub before">Upozornění každou chvíli, reklamy, vyskakovací okna, přihlašování a titulky, které chtějí jen klik. Většina zpravodajských aplikací chce tvou pozornost celý den.</p>
+                <p class="sub after">DailyFive ji chce jednou denně, na tři minuty. Pět zpráv, které stojí za to vědět, a pak máš hotovo.</p>
+              </div>
+            </div>
+            <div class="noise-stage" aria-hidden="true">
+              <span class="chip" style="--x:2%;--y:3%;--dx:-90;--dy:-230;--r:-4;--t:2.6;--d:0.3"><span class="chip-in"><span class="badge">+47</span>nových zpráv</span></span>
+              <span class="chip" style="--x:50%;--y:1%;--dx:240;--dy:-180;--r:3;--t:3.1;--d:1.2"><span class="chip-in dashed"><span class="tag">Reklama</span>Sleva 70 % jen dnes</span></span>
+              <span class="chip" style="--x:8%;--y:18%;--dx:-110;--dy:-200;--r:2;--t:2.9;--d:2"><span class="chip-in dark">Přihlaste se a čtěte dál <span class="btn" style="background:#f5f5f7;color:#1d1d1f">Přihlásit</span></span></span>
+              <span class="chip" style="--x:55%;--y:17%;--dx:300;--dy:-80;--r:-3;--t:2.4;--d:0.8"><span class="chip-in"><span class="tag red">Právě teď</span>Šokující odhalení!</span></span>
+              <span class="chip" style="--x:0%;--y:36%;--dx:-130;--dy:-120;--r:-2;--t:3.4;--d:1.6"><span class="chip-in">Zapomněli jste heslo?</span></span>
+              <span class="chip" style="--x:48%;--y:34%;--dx:320;--dy:10;--r:2;--t:2.7;--d:0.1"><span class="chip-in">Přijmout všechny cookies <span class="btn">OK</span></span></span>
+              <span class="chip" style="--x:4%;--y:54%;--dx:-130;--dy:130;--r:3;--t:3;--d:2.3"><span class="chip-in">▶ Musíte vidět: video obletělo svět</span></span>
+              <span class="chip" style="--x:57%;--y:52%;--dx:300;--dy:90;--r:-2;--t:2.5;--d:1.1"><span class="chip-in">Povolit upozornění? <span class="btn">Povolit</span></span></span>
+              <span class="chip" style="--x:1%;--y:72%;--dx:-110;--dy:220;--r:-3;--t:2.8;--d:0.6"><span class="chip-in dashed"><span class="tag">Prémium</span>Odemkněte článek za 49 Kč</span></span>
+              <span class="chip" style="--x:53%;--y:70%;--dx:260;--dy:180;--r:3;--t:3.3;--d:1.9"><span class="chip-in"><span class="muted">Video se spustí za</span> 5 s</span></span>
+              <span class="chip" style="--x:18%;--y:88%;--dx:-60;--dy:260;--r:2;--t:2.6;--d:1.4"><span class="chip-in">Doporučujeme pro vás <span class="badge">12</span></span></span>
+              <span class="chip" style="--x:62%;--y:88%;--dx:200;--dy:240;--r:-2;--t:3;--d:0.4"><span class="chip-in"><span class="muted">Další zpráva</span> ↓</span></span>
+              <div class="calm">
+                <p class="calm-head">Dnešní pětka <span>18:00</span></p>
+                <p class="calm-title">Pět zpráv dne<span class="dot">.</span></p>
+                <ol class="calm-list" data-calm>
+                  <li style="--i:0"><b>1</b><span><i class="bar"></i><i class="bar"></i></span></li>
+                  <li style="--i:1"><b>2</b><span><i class="bar"></i><i class="bar"></i></span></li>
+                  <li style="--i:2"><b>3</b><span><i class="bar"></i><i class="bar"></i></span></li>
+                  <li style="--i:3"><b>4</b><span><i class="bar"></i><i class="bar"></i></span></li>
+                  <li style="--i:4"><b>5</b><span><i class="bar"></i><i class="bar"></i></span></li>
+                </ol>
+              </div>
+            </div>
           </div>
-          <p class="small">Zdarma. Bez reklam, bez účtu a bez sledování.</p>
         </div>
-        <div class="phone">
-          <img src="/assets/app-home.jpg" alt="Ukázka aplikace DailyFive: dnešní pětka zpráv" width="780" height="1688" fetchpriority="high">
+      </div>
+    </section>
+
+    <section class="night manifesto" aria-labelledby="bez-nadpis">
+      <div class="wrap">
+        <p class="kicker">Co u nás nenajdeš</p>
+        <h2 id="bez-nadpis" class="sr-only">Bez reklam, bez přihlašování, bez hesel, bez sledování, bez nekonečného scrollování a bez clickbaitu</h2>
+        <ul class="bez">
+          <li>Bez <span class="x">reklam</span>.</li>
+          <li>Bez <span class="x">přihlašování</span>.</li>
+          <li>Bez <span class="x">hesel</span>.</li>
+          <li>Bez <span class="x">sledování</span>.</li>
+          <li>Bez <span class="x">nekonečného scrollování</span>.</li>
+          <li>Bez <span class="x">clickbaitu</span>.</li>
+        </ul>
+        <p class="bez-end reveal">Jen <em>pět zpráv</em>. A klid<span class="dot">.</span></p>
+        <p class="bez-note reveal">Nic po tobě nechceme. Žádný účet, žádný e-mail, žádné heslo. Otevřeš aplikaci a čteš. DailyFive je zdarma a bez reklam.</p>
+      </div>
+    </section>
+
+    <section class="section process" id="jak" aria-labelledby="jak-nadpis">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <p class="kicker">Jak to funguje</p>
+          <h2 id="jak-nadpis">Z tisíce článků pět zpráv<span class="dot">.</span></h2>
+          <p class="sub">Celý den čteme za tebe. Každá zpráva projde sběrem, výběrem, psaním a nezávislou kontrolou. Večer dostaneš jen to podstatné.</p>
+        </div>
+        <figure class="funnel reveal" aria-hidden="true">
+          <canvas data-funnel></canvas>
+        </figure>
+        <p class="live-stat" data-stats hidden><span class="pulse" aria-hidden="true"></span><span>Za posledních 24 hodin jsme prošli <strong data-stat-articles></strong> článků z <strong data-stat-sources>29</strong> redakcí.</span></p>
+        <ol class="pipeline">
+          <li class="stage" style="--i:0">
+            <span class="stage-num">01</span>
+            <p class="stage-big"><span data-countup="29">29</span><small>redakcí</small></p>
+            <h3>Sběr</h3>
+            <p>Každých 30 minut stáhneme nové články z 29 českých i zahraničních redakcí, od ČT24 a iROZHLASU po Seznam Zprávy, Deník N a BBC. Za den jich je přes tisíc.</p>
+          </li>
+          <li class="stage" style="--i:1">
+            <span class="stage-num">02</span>
+            <p class="stage-big"><span data-countup="450">450</span><small>kandidátů</small></p>
+            <h3>Výběr</h3>
+            <p>Z posledních 25 hodin vezmeme 450 nejčerstvějších článků, nejvýš 45 od jedné redakce. AI je seskupí podle událostí a vybere pět nejdůležitějších a tři náhradní.</p>
+          </li>
+          <li class="stage" style="--i:2">
+            <span class="stage-num">03</span>
+            <p class="stage-big">70–110<small>slov na zprávu</small></p>
+            <h3>Psaní</h3>
+            <p>Každou událost shrne krátce a neutrálně, jen z faktů ve zdrojích. Tvrzení přisoudí konkrétním lidem, hodnocení vynechá.</p>
+          </li>
+          <li class="stage" style="--i:3">
+            <span class="stage-num">04</span>
+            <p class="stage-big">2.<small>nezávislé kolo AI</small></p>
+            <h3>Kontrola</h3>
+            <p>Druhé, nezávislé kolo AI porovná každý text se zdroji a opraví všechno, co v nich nemá oporu.</p>
+          </li>
+          <li class="stage" style="--i:4">
+            <span class="stage-num">05</span>
+            <p class="stage-big">18:00<small>jedno upozornění</small></p>
+            <h3>Vydání</h3>
+            <p>Pětka vyjde a přijde ti jedno upozornění. U každé zprávy jsou odkazy na původní články, celý text si přečteš u redakce.</p>
+          </li>
+        </ol>
+        <div class="safety reveal">
+          <span class="safety-icon" aria-hidden="true">✓</span>
+          <p>A když se přesto něco nepovede? Chybu nahlásíš jedním klepnutím přímo pod zprávou a opravíme ji obvykle do 24 hodin. <a href="/redakcni-zasady/">Redakční zásady</a></p>
         </div>
       </div>
     </section>
@@ -90,52 +243,59 @@
       </div>
     </section>
 
-    <section class="section" id="jak" aria-labelledby="jak-nadpis">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">Jak to funguje</p>
-          <h2 id="jak-nadpis">Jak vzniká pětka</h2>
-          <p class="sub">Celý den čteme za tebe. Večer dostaneš jen to podstatné.</p>
+    <section class="night evening" aria-labelledby="vecer-nadpis">
+      <div class="wrap evening-grid">
+        <div class="evening-visual">
+          <div class="phone">
+            <div class="phone-screen"><img src="/assets/app-dark.jpg" alt="DailyFive v tmavém režimu: detail zprávy" width="780" height="1688" loading="lazy"></div>
+          </div>
+          <svg class="clock" viewBox="0 0 120 120" aria-hidden="true">
+            <circle class="clock-face" cx="60" cy="60" r="56"/>
+            <g class="clock-ticks">
+              <line class="clock-tick" x1="60" y1="10" x2="60" y2="18"/>
+              <line class="clock-tick" x1="110" y1="60" x2="102" y2="60"/>
+              <line class="clock-tick" x1="60" y1="110" x2="60" y2="102"/>
+              <line class="clock-tick" x1="10" y1="60" x2="18" y2="60"/>
+            </g>
+            <line class="clock-hand clock-hour" x1="60" y1="60" x2="60" y2="34"/>
+            <line class="clock-hand clock-min" x1="60" y1="60" x2="60" y2="20"/>
+            <circle cx="60" cy="60" r="4.5" fill="#e2a24a"/>
+            <circle class="clock-ring" cx="60" cy="60" r="56"/>
+          </svg>
         </div>
-        <ol class="steps">
-          <li class="step"><h3>Sběr</h3><p>Celý den sledujeme 29 českých i zahraničních redakcí, od ČT24 a iROZHLASU po Seznam Zprávy, Deník N a BBC.</p></li>
-          <li class="step"><h3>Výběr</h3><p>AI seskupí stovky článků podle událostí a vybere pět nejdůležitějších. Aspoň dvě jsou z Česka, když se doma stalo něco podstatného.</p></li>
-          <li class="step"><h3>Psaní</h3><p>Každou událost shrne krátce a neutrálně: jen fakta ze zdrojů, tvrzení přisouzená konkrétním lidem.</p></li>
-          <li class="step"><h3>Kontrola</h3><p>Druhé, nezávislé kolo AI porovná text se zdroji a opraví vše, co v nich nemá oporu.</p></li>
-          <li class="step is-time"><h3>18:00</h3><p>Pětka vyjde a přijde ti jedno upozornění. U každé zprávy najdeš odkazy na původní články.</p></li>
-        </ol>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="slib-nadpis">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="kicker">Co slibujeme</p>
-          <h2 id="slib-nadpis">Méně, ale pořádně</h2>
-        </div>
-        <div class="promises">
-          <div class="promise"><h3>Pět zpráv. Ne víc.</h3><p>Kdo si přečte pětku, ví, co se ten den opravdu stalo. Bez nekonečného scrollování.</p></div>
-          <div class="promise"><h3>Jen fakta</h3><p>Žádné hodnocení, žádné emoce, žádné titulky lákající na kliknutí.</p></div>
-          <div class="promise"><h3>Vždy se zdroji</h3><p>U každé zprávy odkazujeme na redakce, které o ní psaly. Celý článek si přečteš u nich.</p></div>
-          <div class="promise"><h3>Otevřeně o AI</h3><p>Texty píše umělá inteligence a říkáme to u každé zprávy. Chybu nahlásíš jedním klepnutím.</p></div>
+        <div class="evening-copy reveal">
+          <p class="kicker">Na večer</p>
+          <h2 id="vecer-nadpis">Tři minuty. Pak klidně spát<span class="dot">.</span></h2>
+          <p class="sub">Pětka vychází v 18:00, abys večer věděl, co se za den stalo. Přečteš ji na gauči nebo v posteli a pak to můžeš pustit z hlavy.</p>
+          <ul class="evening-list">
+            <li><span><b>Jedno upozornění denně.</b> Jen když vyjde nová pětka. Vypneš ho jedním přepínačem.</span></li>
+            <li><span><b>Tmavý režim</b> podle nastavení telefonu, ať tě večer nic neoslní.</span></li>
+            <li><span><b>Celé za tři minuty.</b> Žádné nekonečné scrollování, pětka má konec.</span></li>
+            <li><span><b>Soukromí.</b> Co máš přečtené, ví jen tvůj telefon.</span></li>
+          </ul>
         </div>
       </div>
     </section>
 
     <section class="section" aria-labelledby="autor-nadpis">
-      <div class="wrap">
-        <div class="author">
-          <div class="avatar" aria-hidden="true">VD</div>
-          <div>
-            <p class="kicker" style="color: var(--sage)">Kdo za tím stojí</p>
-            <h2 id="autor-nadpis">Vojtěch Dvořák</h2>
-            <p class="bio">Ahoj, jsem Vojta. Dělám videa a grafiku a DailyFive je můj první vlastní produkt. Chtěl jsem aplikaci, která mi jednou denně řekne, co se opravdu stalo. Bez křiku, bez clickbaitu a bez nekonečného scrollování. Tak jsem ji začal stavět a celý vývoj natáčím.</p>
-            <div class="links">
-              <a href="https://vojtechdvorak.cz">vojtechdvorak.cz</a>
-              <a href="mailto:ahoj@dailyfive.cz">ahoj@dailyfive.cz</a>
-            </div>
-          </div>
+      <div class="wrap teaser reveal">
+        <a class="avatar-wrap" href="/autor/" aria-label="Vojtěch Dvořák, víc o autorovi">
+          <span class="avatar-photo"><img src="/assets/autor/vojtech-dvorak-dubaj-480.webp" alt="Vojtěch Dvořák" width="480" height="640" loading="lazy"></span>
+        </a>
+        <div>
+          <p class="kicker">Kdo za tím stojí</p>
+          <h2 id="autor-nadpis">Vojtěch Dvořák</h2>
+          <p class="bio">Mladý podnikatel a&nbsp;content creator z&nbsp;Nymburka. DailyFive je jeden z jeho projektů: aplikace, kterou sám chtěl mít. Jednou denně, bez křiku a bez clickbaitu. Celý vývoj natáčí a sdílí.</p>
+          <a class="arrow-link" href="/autor/">Víc o autorovi</a>
         </div>
+      </div>
+    </section>
+
+    <section class="night cta-band" aria-labelledby="zaver-nadpis">
+      <div class="wrap reveal">
+        <h2 id="zaver-nadpis">Pětka vychází každý den v&nbsp;18:00<span class="dot">.</span></h2>
+        <p>Zdarma, bez reklam a bez účtu. Aplikace pro iPhone bude brzy v App Storu, verzi pro Android připravujeme.</p>
+        <span class="store-badge"><small>Již brzy v</small><strong>App Store</strong></span>
       </div>
     </section>
   </main>
@@ -144,6 +304,7 @@
     <div class="wrap">
       <p>© 2026 Vojtěch Dvořák · IČO 29998271 · <a href="mailto:ahoj@dailyfive.cz">ahoj@dailyfive.cz</a></p>
       <nav aria-label="Patička">
+        <a href="/autor/">O autorovi</a>
         <a href="/podpora/">Podpora</a>
         <a href="/redakcni-zasady/">Redakční zásady</a>
         <a href="/soukromi/">Zásady soukromí</a>
@@ -152,5 +313,6 @@
   </footer>
 
   <script src="/assets/edition.js" defer></script>
+  <script src="/assets/site.js" defer></script>
 </body>
 </html>
