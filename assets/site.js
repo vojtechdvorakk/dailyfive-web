@@ -37,7 +37,7 @@
         if (e.target.hasAttribute("data-countup")) countUp(e.target);
         io.unobserve(e.target);
       });
-    }, { rootMargin: "0px 0px -10% 0px", threshold: 0.2 });
+    }, { rootMargin: "0px 0px -6% 0px", threshold: 0.08 });
     Array.prototype.forEach.call(watched, function (el) { io.observe(el); });
   } else {
     Array.prototype.forEach.call(watched, function (el) { el.classList.add("is-in"); });
