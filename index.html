@@ -68,6 +68,7 @@
   <a class="skip" href="#obsah">Přeskočit na obsah</a>
 
   <div class="night hero-wrap">
+    <div class="aurora" aria-hidden="true"><i class="a1"></i><i class="a2"></i><i class="a3"></i><i class="a4"></i></div>
     <header class="site-header on-dark">
       <div class="wrap">
         <a class="logo" href="/" aria-label="DailyFive – úvod"><img src="/assets/logo-light.svg" alt="DailyFive" width="166" height="38"></a>
@@ -94,11 +95,14 @@
             <li>Bez reklam</li>
             <li>Bez přihlašování</li>
             <li>Bez sledování</li>
+            <li>Bez citového zabarvení</li>
           </ul>
         </div>
         <div class="hero-visual">
-          <div class="lamp" aria-hidden="true"></div>
-          <div class="phone float">
+          <div class="phones">
+            <div class="slot left" aria-hidden="true"><div class="phone float"><div class="phone-screen"><img src="/assets/app-story.jpg" alt="" width="780" height="1688" decoding="async"></div></div></div>
+            <div class="slot right" aria-hidden="true"><div class="phone float"><div class="phone-screen"><img src="/assets/app-dark.jpg" alt="" width="780" height="1688" decoding="async"></div></div></div>
+            <div class="slot front"><div class="phone float">
             <div class="phone-screen">
               <img src="/assets/app-home.jpg" alt="Aplikace DailyFive: dnešní pětka zpráv" width="780" height="1688" fetchpriority="high">
               <div class="notif" data-notif aria-hidden="true">
@@ -110,6 +114,7 @@
                 </div>
               </div>
             </div>
+            </div></div>
           </div>
         </div>
       </div>
@@ -143,7 +148,7 @@
               <span class="chip" style="--x:18%;--y:88%;--dx:-60;--dy:260;--r:2;--t:2.6;--d:1.4"><span class="chip-in">Doporučujeme pro vás <span class="badge">12</span></span></span>
               <span class="chip" style="--x:62%;--y:88%;--dx:200;--dy:240;--r:-2;--t:3;--d:0.4"><span class="chip-in"><span class="muted">Další zpráva</span> ↓</span></span>
               <div class="calm">
-                <p class="calm-head">Dnešní pětka <span>18:00</span></p>
+                <p class="calm-head"><span class="calm-label" data-calm-label>Dnešní pětka</span> <span>18:00</span></p>
                 <p class="calm-title">Pět zpráv dne<span class="dot">.</span></p>
                 <ol class="calm-list" data-calm>
                   <li style="--i:0"><b>1</b><span><i class="bar"></i><i class="bar"></i></span></li>
@@ -162,17 +167,48 @@
     <section class="night manifesto" aria-labelledby="bez-nadpis">
       <div class="wrap">
         <p class="kicker">Co u nás nenajdeš</p>
-        <h2 id="bez-nadpis" class="sr-only">Bez reklam, bez přihlašování, bez hesel, bez sledování, bez nekonečného scrollování a bez clickbaitu</h2>
+        <h2 id="bez-nadpis" class="sr-only">Bez reklam, bez přihlašování, bez hesel, bez sledování, bez zahlcení, bez senzací a bez clickbaitu</h2>
         <ul class="bez">
           <li>Bez <span class="x">reklam</span>.</li>
           <li>Bez <span class="x">přihlašování</span>.</li>
           <li>Bez <span class="x">hesel</span>.</li>
           <li>Bez <span class="x">sledování</span>.</li>
-          <li>Bez <span class="x">nekonečného scrollování</span>.</li>
+          <li>Bez <span class="x">zahlcení</span>.</li>
+          <li>Bez <span class="x">senzací</span>.</li>
           <li>Bez <span class="x">clickbaitu</span>.</li>
         </ul>
-        <p class="bez-end reveal">Jen <em>pět zpráv</em>. A klid<span class="dot">.</span></p>
-        <p class="bez-note reveal">Nic po tobě nechceme. Žádný účet, žádný e-mail, žádné heslo. Otevřeš aplikaci a čteš. DailyFive je zdarma a bez reklam.</p>
+        <p class="bez-end reveal">Jen <em>fakta</em>. Názor si uděláš sám<span class="dot">.</span></p>
+        <p class="bez-note reveal">Nic po tobě nechceme. Žádný účet, žádný e-mail, žádné heslo a žádné nekonečné scrollování. Otevřeš aplikaci, přečteš pět zpráv a máš hotovo. DailyFive je zdarma a bez reklam.</p>
+      </div>
+    </section>
+
+    <section class="section neutral" id="neutralne" aria-labelledby="neutralne-nadpis">
+      <div class="wrap neutral-grid">
+        <div class="neutral-copy reveal">
+          <p class="kicker">Bez citového zabarvení</p>
+          <h2 id="neutralne-nadpis">Co se stalo. Ne&nbsp;co si o&nbsp;tom myslet<span class="dot">.</span></h2>
+          <p class="sub">Zprávy píšeme bez emocí, bez přívlastků a&nbsp;bez vykřičníků. Jen co se stalo, kdo co řekl a&nbsp;odkud to víme. Nikoho nestrašíme ani nerozčilujeme, názor si uděláš sám.</p>
+          <ul class="neutral-points">
+            <li>Fakta místo hodnocení</li>
+            <li>Každé tvrzení s&nbsp;tím, kdo ho řekl</li>
+            <li>U&nbsp;každé zprávy odkazy na původní články</li>
+          </ul>
+        </div>
+        <div class="headlines" data-headlines>
+          <div class="hl-pair" style="--i:0">
+            <p class="hl-bad"><span class="hl-tag">Jinde</span><span class="hl-text">ŠOK ve vládě! Tohle nikdo nečekal</span></p>
+            <p class="hl-good"><span class="hl-tag">DailyFive</span><span class="hl-text">Vláda schválila návrh státního rozpočtu na příští rok</span></p>
+          </div>
+          <div class="hl-pair" style="--i:1">
+            <p class="hl-bad"><span class="hl-tag">Jinde</span><span class="hl-text">Neuvěříte, co ministr řekl o&nbsp;důchodech!</span></p>
+            <p class="hl-good"><span class="hl-tag">DailyFive</span><span class="hl-text">Ministr práce představil návrh změn v&nbsp;důchodech</span></p>
+          </div>
+          <div class="hl-pair" style="--i:2">
+            <p class="hl-bad"><span class="hl-tag">Jinde</span><span class="hl-text">Ceny letí do nebes, lidé šílí</span></p>
+            <p class="hl-good"><span class="hl-tag">DailyFive</span><span class="hl-text">Statistický úřad zveřejnil nová data o&nbsp;inflaci</span></p>
+          </div>
+          <p class="hl-note">Ukázka se smyšlenými titulky.</p>
+        </div>
       </div>
     </section>
 
@@ -280,7 +316,7 @@
     <section class="section" aria-labelledby="autor-nadpis">
       <div class="wrap teaser reveal">
         <a class="avatar-wrap" href="/autor/" aria-label="Vojtěch Dvořák, víc o autorovi">
-          <span class="avatar-photo"><img src="/assets/autor/vojtech-dvorak-dubaj-480.webp" alt="Vojtěch Dvořák" width="480" height="640" loading="lazy"></span>
+          <span class="avatar-photo"><img src="/assets/autor/vojtech-dvorak-portret-640.webp" alt="Vojtěch Dvořák" width="640" height="640" loading="lazy"></span>
         </a>
         <div>
           <p class="kicker">Kdo za tím stojí</p>

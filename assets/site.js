@@ -28,7 +28,7 @@
     requestAnimationFrame(tick);
   }
 
-  var watched = document.querySelectorAll(".reveal, .bez li, .pipeline, .clock, [data-countup], .journey li");
+  var watched = document.querySelectorAll(".reveal, .bez li, .pipeline, .clock, [data-countup], .journey li, [data-headlines]");
   if (!reduce && "IntersectionObserver" in window) {
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (e) {
@@ -50,6 +50,11 @@
       .formatToParts(new Date())
       .forEach(function (x) { p[x.type] = x.value; });
     return { date: p.year + "-" + p.month + "-" + p.day, secs: Number(p.hour) * 3600 + Number(p.minute) * 60 + Number(p.second) };
+  }
+  function pragueDate(d) {
+    var p = {};
+    new Intl.DateTimeFormat("en-GB", { timeZone: "Europe/Prague", year: "numeric", month: "2-digit", day: "2-digit" }).formatToParts(d).forEach(function (x) { p[x.type] = x.value; });
+    return p.year + "-" + p.month + "-" + p.day;
   }
   var countdown = document.querySelector("[data-countdown]");
   function updateCountdown() {
@@ -78,7 +83,8 @@
     } else {
       var heroVisible = true;
       if ("IntersectionObserver" in window) {
-        new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; }).observe(notif);
+        // Sledujeme celý telefon: schované upozornění je mimo displej, a tak by nebylo „vidět“ nikdy
+        new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; }).observe(notif.closest(".phone") || notif);
       }
       var cycle = function () {
         if (heroVisible && !document.hidden) {
@@ -101,9 +107,10 @@
       var r = noise.getBoundingClientRect();
       var total = r.height - window.innerHeight;
       var p = total > 0 ? clamp01(-r.top / total) : 1;
-      noise.style.setProperty("--out", clamp01((p - 0.1) / 0.38).toFixed(3));
-      noise.style.setProperty("--swap", clamp01((p - 0.36) / 0.16).toFixed(3));
-      noise.style.setProperty("--in", clamp01((p - 0.42) / 0.34).toFixed(3));
+      // Celá proměna proběhne zhruba za polovinu výšky okna, ať stačí pár otočení kolečkem
+      noise.style.setProperty("--out", clamp01((p - 0.04) / 0.42).toFixed(3));
+      noise.style.setProperty("--swap", clamp01((p - 0.32) / 0.2).toFixed(3));
+      noise.style.setProperty("--in", clamp01((p - 0.38) / 0.36).toFixed(3));
     };
     window.addEventListener("scroll", function () { if (!queued) { queued = true; requestAnimationFrame(updateNoise); } }, { passive: true });
     window.addEventListener("resize", updateNoise);
@@ -312,5 +319,11 @@
     Array.prototype.forEach.call(calm, function (el, i) {
       if (stories[i] && stories[i].headline) el.textContent = stories[i].headline;
     });
+    var label = document.querySelector("[data-calm-label]");
+    if (label) {
+      var now = pragueNow();
+      var yesterday = pragueDate(new Date(Date.now() - 86400000));
+      label.textContent = edition.date === now.date ? "Dnešní pětka" : edition.date === yesterday ? "Včerejší pětka" : "Poslední pětka";
+    }
   });
 })();

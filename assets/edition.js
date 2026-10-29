@@ -99,12 +99,15 @@
         showMessage("První vydání zatím nevyšlo. Pětka vychází každý den v 18:00.");
         return;
       }
+      // Pětka vychází v 18:00, do té doby je nejnovější ta včerejší. Říkáme to rovnou, ať nikoho nezmate datum.
       var now = pragueParts(new Date());
+      var yesterday = pragueParts(new Date(Date.now() - 86400000)).date;
       var isToday = edition.date === now.date;
-      kicker.textContent = isToday ? "Dnešní vydání" : "Poslední vydání";
-      title.textContent = isToday ? "Dnešní pětka" : "Poslední pětka";
+      var isYesterday = edition.date === yesterday;
+      kicker.textContent = isToday ? "Dnešní vydání" : isYesterday ? "Včerejší vydání" : "Poslední vydání";
+      title.textContent = isToday ? "Dnešní pětka" : isYesterday ? "Včerejší pětka" : "Poslední pětka";
       var meta = czechDate(edition.date);
-      if (!isToday) meta += now.hour >= EDITION_HOUR ? " · dnešní pětka se právě připravuje" : " · nová pětka vyjde dnes v 18:00";
+      if (!isToday) meta += now.hour >= EDITION_HOUR ? " · dnešní pětka se právě připravuje" : " · dnešní pětka vyjde v 18:00";
       dateEl.textContent = meta.charAt(0).toUpperCase() + meta.slice(1);
 
       list.textContent = "";
