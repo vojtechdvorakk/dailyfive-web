@@ -166,6 +166,9 @@ h3 { font-size: 21px; line-height: 1.25; }
 .slot.left { transform: translate(calc(-50% - 158px), -46%) rotate(-9deg); }
 .slot.right { transform: translate(calc(-50% + 158px), -46%) rotate(9deg); }
 .slot.left .phone, .slot.right .phone { filter: brightness(0.7) saturate(0.9); }
+/* Na počítači posunout telefony doprava, ať levý nezakrývá oranžové tečky v nadpisu */
+@media (min-width: 861px) { .phones { transform: translateX(48px); } }
+@media (min-width: 861px) and (max-width: 1180px) { .phones { transform: translateX(34px) scale(0.88); } }
 .float { animation: float 9s ease-in-out infinite; }
 .slot.left .float { animation-duration: 11s; animation-delay: -3s; }
 .slot.right .float { animation-duration: 12s; animation-delay: -7s; }
