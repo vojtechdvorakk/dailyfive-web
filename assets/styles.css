@@ -485,3 +485,10 @@ h3 { font-size: 21px; line-height: 1.25; }
   .skeleton, .aurora i, .float, .chip-in, .pulse::after, .stories > li { animation: none; }
   .notif { transition: none; }
 }
+
+/* App Store odkaz (aplikace vyšla 4. 11. 2026) */
+a.store-badge { transition: transform 0.3s var(--ease), box-shadow 0.3s; }
+a.store-badge:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -18px rgba(0, 0, 0, 0.55); }
+.store-badge--app { flex-direction: row; align-items: center; gap: 12px; padding: 10px 22px 10px 16px; }
+.store-badge--app svg { flex: none; width: 28px; height: 28px; fill: currentColor; }
+.store-badge--app span { display: flex; flex-direction: column; }
