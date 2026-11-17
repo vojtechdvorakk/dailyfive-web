@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="cs">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DailyFive – aplikace</title>
+  <meta name="description" content="DailyFive: pět nejdůležitějších zpráv dne každý večer v 18:00. Neutrálně, stručně a se zdroji.">
+  <meta name="robots" content="noindex">
+  <meta name="apple-itunes-app" content="app-id=6829328352">
+  <link rel="canonical" href="https://dailyfive.cz/">
+  <meta name="theme-color" content="#1C3D36">
+  <!-- Odkaz ze sdílených obrázků a zpráv (dailyfive.cz/app): na iPhonu a iPadu rovnou App Store, jinde úvodní stránka webu. -->
+  <script>
+    (function () {
+      var ua = navigator.userAgent || "";
+      var ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+      window.location.replace(ios ? "https://apps.apple.com/cz/app/dailyfive-5-zpr%C3%A1v-dne/id6829328352" : "/");
+    })();
+  </script>
+  <style>
+    body { margin: 0; min-height: 100vh; display: grid; place-items: center; background: #1C3D36; color: #F3EFE3; font: 17px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; text-align: center; padding: 24px; box-sizing: border-box; }
+    a { color: #E2A24A; }
+  </style>
+</head>
+<body>
+  <p>Otevírám DailyFive…<br><a href="https://apps.apple.com/cz/app/dailyfive-5-zpr%C3%A1v-dne/id6829328352">DailyFive v App Storu</a> · <a href="/">dailyfive.cz</a></p>
+</body>
+</html>

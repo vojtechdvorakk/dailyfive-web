@@ -35,10 +35,10 @@
     <article class="wrap prose">
       <div class="kicker">Soukromí</div>
       <h1>Zásady ochrany osobních údajů</h1>
-      <p class="updated">Platí od 1. listopadu 2026</p>
+      <p class="updated">Platí od 17. listopadu 2026</p>
 
       <div class="box">
-        <p><strong>Stručně:</strong> DailyFive nepotřebuje účet a nepoužívá reklamy, analytiku ani sledování. Když zapneš upozornění, uložíme anonymní identifikátor, abychom ti je mohli doručit. Co čteš, ví jen tvůj telefon.</p>
+        <p><strong>Stručně:</strong> DailyFive nepotřebuje účet a nepoužívá reklamy, analytiku ani sledování. Když zapneš upozornění, uložíme anonymní identifikátor, abychom ti je mohli doručit. Co čteš, ví jen tvůj telefon. Otázky v části „Zeptej se“ neukládáme.</p>
       </div>
 
       <h2>Kdo údaje zpracovává</h2>
@@ -57,14 +57,18 @@
       <h3>2. Hlášení chyby ve zprávě</h3>
       <p>Když pod zprávou použiješ tlačítko „Nahlásit chybu“, uložíme, kterou zprávu hlásíš, zvolený důvod, text poznámky (pokud ho napíšeš) a typ zařízení. K hlášení neukládáme identifikátor zařízení ani IP adresu. Do poznámky prosím nepiš osobní údaje. Hlášení používáme k opravám chyb ve zprávách na základě oprávněného zájmu na přesném zpravodajství (čl. 6 odst. 1 písm. f) GDPR) a mažeme je nejpozději po roce.</p>
 
-      <h3>3. Co čteš</h3>
-      <p>Které zprávy máš přečtené a poslední stažené vydání se ukládají <strong>jen v tvém telefonu</strong>. Nám se nic z toho neodesílá.</p>
-      <p>Vydání i obrázky ke zprávám (fotky s volnou licencí z Wikimedia Commons a naše mapy) aplikace stahuje jen z našeho serveru (Supabase), ne z cizích webů. Supabase přitom stejně jako u webu zpracuje technické údaje v provozních záznamech (viz bod 4). Když klepneš na zdroj zprávy nebo na autora fotky, otevře se cizí web (redakce nebo Wikimedia Commons) s vlastními zásadami.</p>
+      <h3>3. Otázky v části „Zeptej se“</h3>
+      <p>U zpráv se můžeš zeptat umělé inteligence. Před prvním použitím tě aplikace požádá o souhlas. Když otázku odešleš, pošleme na náš server (Supabase) text otázky, předchozí otázky a odpovědi v témže rozhovoru, číslo zprávy a náhodný identifikátor aplikace. Server je spolu s textem zprávy a článků předá k zodpovězení společnosti Anthropic (Claude). <strong>Otázky ani odpovědi neukládáme.</strong></p>
+      <p>Kvůli dennímu limitu otázek si pamatujeme jen počet otázek za den, a to k anonymnímu otisku identifikátoru aplikace a IP adresy (jednosměrná funkce SHA-256, z otisku nejde zjistit původní hodnotu). Tyto počty mažeme po 7 dnech. Anthropic otázku zpracuje jako náš zpracovatel jen kvůli odpovědi. Podle svých obchodních podmínek ji nepoužívá k trénování modelů a uchovává ji jen omezenou dobu kvůli bezpečnosti. Právním základem je tvůj souhlas (čl. 6 odst. 1 písm. a) GDPR); odvoláš ho tím, že funkci přestaneš používat. Do otázek prosím nepiš své jméno ani jiné osobní údaje.</p>
 
-      <h3>4. Web dailyfive.cz</h3>
+      <h3>4. Co čteš</h3>
+      <p>Které zprávy máš přečtené a poslední stažené vydání se ukládají <strong>jen v tvém telefonu</strong>. Nám se nic z toho neodesílá.</p>
+      <p>Vydání i obrázky ke zprávám (fotky s volnou licencí z Wikimedia Commons a naše mapy) aplikace stahuje jen z našeho serveru (Supabase), ne z cizích webů. Supabase přitom stejně jako u webu zpracuje technické údaje v provozních záznamech (viz bod 5). Když zprávu sdílíš jako obrázek, vytvoří ho aplikace přímo v telefonu. Když klepneš na zdroj zprávy nebo na autora fotky, otevře se cizí web (redakce nebo Wikimedia Commons) s vlastními zásadami.</p>
+
+      <h3>5. Web dailyfive.cz</h3>
       <p>Web nepoužívá cookies, analytiku ani sledovací nástroje a písma načítá ze svého serveru. Běží na službě GitHub Pages. Sekce „Dnešní pětka“ si stahuje vydání z našeho serveru (Supabase). Jako u každého webu zpracují GitHub a Supabase při návštěvě technické údaje (IP adresu, typ prohlížeče a čas požadavku) v provozních záznamech. Potřebujeme je, aby web fungoval a byl chráněný proti útokům (oprávněný zájem, čl. 6 odst. 1 písm. f) GDPR). Záznamy se automaticky mažou po krátké době.</p>
 
-      <h3>5. Když nám napíšeš</h3>
+      <h3>6. Když nám napíšeš</h3>
       <p>Tvou e-mailovou adresu a zprávu použijeme jen k odpovědi (oprávněný zájem, čl. 6 odst. 1 písm. f) GDPR). Konverzaci uchováváme, dokud je potřeba k vyřízení, nejdéle 2 roky.</p>
 
       <h2>Kdo s údaji pracuje</h2>
@@ -73,11 +77,12 @@
         <li><strong>Supabase Inc.</strong>: databáze a server, data jsou uložená v EU (Irsko),</li>
         <li><strong>650 Industries, Inc. (Expo)</strong>: odeslání push notifikací,</li>
         <li><strong>Apple Inc.</strong> a <strong>Google LLC</strong>: doručení notifikací do zařízení (služby APNs a FCM),</li>
+        <li><strong>Anthropic, PBC</strong>: odpovědi na otázky v části „Zeptej se“ (bod 3),</li>
         <li><strong>GitHub, Inc.</strong>: hosting webu dailyfive.cz (GitHub Pages),</li>
         <li><strong>Google</strong>: e-mailová schránka (Google Workspace).</li>
       </ul>
       <p>Někteří zpracovatelé sídlí v USA. Předávání údajů je chráněné standardními smluvními doložkami EU nebo rámcem EU–USA pro ochranu osobních údajů (Data Privacy Framework).</p>
-      <p>Texty zpráv píše umělá inteligence (Claude od společnosti Anthropic). Pracuje jen s články zpravodajských redakcí, s údaji o čtenářích ne.</p>
+      <p>Texty zpráv píše umělá inteligence (Claude od společnosti Anthropic). Při psaní pracuje jen s články zpravodajských redakcí, s údaji o čtenářích ne. Jedinou výjimkou jsou otázky, které jí sám pošleš v části „Zeptej se“ (bod 3).</p>
 
       <h2>Tvoje práva</h2>
       <p>Máš právo na přístup ke svým údajům, jejich opravu a výmaz, omezení zpracování, přenositelnost a právo vznést námitku. Napiš nám na <a href="mailto:kontakt@dailyfive.cz">kontakt@dailyfive.cz</a>, odpovíme do 30 dnů. Protože nemáš účet a nevíme, kdo jsi, nejrychlejší cestou ke smazání je vypnout upozornění nebo aplikaci odinstalovat.</p>
