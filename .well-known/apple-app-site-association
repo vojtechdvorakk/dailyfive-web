@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["G8QLK7934S.cz.dailyfive.app"],
+        "components": [
+          { "/": "/app", "comment": "Odkaz ze sdílení: otevře aplikaci (bez ní App Store)" },
+          { "/": "/app/*" }
+        ]
+      }
+    ]
+  }
+}

@@ -9,12 +9,25 @@
   <meta name="apple-itunes-app" content="app-id=6829328352">
   <link rel="canonical" href="https://dailyfive.cz/">
   <meta name="theme-color" content="#1C3D36">
-  <!-- Odkaz ze sdílených obrázků a zpráv (dailyfive.cz/app): na iPhonu a iPadu rovnou App Store, jinde úvodní stránka webu. -->
+  <!-- Chytrý odkaz ze sdílení (dailyfive.cz/app, u zprávy dailyfive.cz/app?z=123):
+       - kdo má aplikaci, tomu iPhone stránku vůbec neotevře a rovnou spustí DailyFive (Universal Links, .well-known/apple-app-site-association),
+       - ve vestavěném prohlížeči Instagramu, TikToku, Facebooku… Universal Links nefungují, proto zkusíme otevřít aplikaci
+         přes dailyfive:// a když se do chvilky neotevře, pošleme do App Storu,
+       - v Safari (aplikace tedy není nainstalovaná) rovnou App Store, na počítači a Androidu úvodní stránka webu. -->
   <script>
     (function () {
+      var STORE = "https://apps.apple.com/cz/app/dailyfive-5-zpr%C3%A1v-dne/id6829328352";
       var ua = navigator.userAgent || "";
       var ios = /iPhone|iPad|iPod/i.test(ua) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-      window.location.replace(ios ? "https://apps.apple.com/cz/app/dailyfive-5-zpr%C3%A1v-dne/id6829328352" : "/");
+      if (!ios) { window.location.replace("/"); return; }
+      var inApp = /Instagram|FBAN|FBAV|FB_IAB|musical_ly|TikTok|Bytedance|Snapchat|Messenger|LinkedInApp|Twitter/i.test(ua);
+      if (!inApp) { window.location.replace(STORE); return; }
+      var z = (window.location.search.match(/[?&]z=(\d+)/) || [])[1];
+      var left = false;
+      document.addEventListener("visibilitychange", function () { if (document.hidden) left = true; });
+      window.addEventListener("pagehide", function () { left = true; });
+      window.location.href = z ? "dailyfive://zprava/" + z : "dailyfive://";
+      setTimeout(function () { if (!left) window.location.replace(STORE); }, 1400);
     })();
   </script>
   <style>
