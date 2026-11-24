@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Zásady ochrany osobních údajů – DailyFive</title>
-  <meta name="description" content="Jaké údaje aplikace a web DailyFive zpracovávají: žádný účet, žádné reklamy ani sledování, jen anonymní identifikátor pro upozornění.">
+  <meta name="description" content="Jaké údaje aplikace a web DailyFive zpracovávají: žádný účet, žádné reklamy ani sledování, jen anonymní identifikátor pro upozornění a anonymní skóre kvízu.">
   <link rel="canonical" href="https://dailyfive.cz/soukromi/">
   <meta name="theme-color" content="#1C3D36">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
@@ -35,10 +35,10 @@
     <article class="wrap prose">
       <div class="kicker">Soukromí</div>
       <h1>Zásady ochrany osobních údajů</h1>
-      <p class="updated">Platí od 17. listopadu 2026</p>
+      <p class="updated">Platí od 24. listopadu 2026 (doplněn kvíz dne a widget)</p>
 
       <div class="box">
-        <p><strong>Stručně:</strong> DailyFive nepotřebuje účet a nepoužívá reklamy, analytiku ani sledování. Když zapneš upozornění, uložíme anonymní identifikátor, abychom ti je mohli doručit. Co čteš, ví jen tvůj telefon. Otázky v části „Zeptej se“ neukládáme.</p>
+        <p><strong>Stručně:</strong> DailyFive nepotřebuje účet a nepoužívá reklamy, analytiku ani sledování. Když zapneš upozornění, uložíme anonymní identifikátor, abychom ti je mohli doručit. Co čteš, ví jen tvůj telefon. Otázky v části „Zeptej se“ neukládáme. Z kvízu dne posíláme jen anonymní skóre bez jakéhokoli identifikátoru.</p>
       </div>
 
       <h2>Kdo údaje zpracovává</h2>
@@ -63,6 +63,8 @@
 
       <h3>4. Co čteš</h3>
       <p>Které zprávy máš přečtené a poslední stažené vydání se ukládají <strong>jen v tvém telefonu</strong>. Nám se nic z toho neodesílá.</p>
+      <p><strong>Kvíz dne:</strong> tvůj výsledek (skóre, které odpovědi byly správně a zvolená obtížnost) se ukládá jen v telefonu. Po prvním dohrání kvízu pošleme na náš server (Supabase) jen datum vydání a počet správných odpovědí (0 až 5). Neposíláme k tomu identifikátor zařízení ani nic jiného, co by tě označovalo, a do databáze se ukládá jen souhrnný počet, kolik lidí mělo jaké skóre. Z něj aplikace ukáže, že jsi byl lepší než určitá část hráčů. Souhrny mažeme po 60 dnech.</p>
+      <p><strong>Widget na ploše:</strong> když si přidáš widget DailyFive, stahuje si titulky dnešní pětky stejně jako aplikace z našeho serveru a nic dalšího neodesílá.</p>
       <p>Vydání i obrázky ke zprávám (fotky s volnou licencí z Wikimedia Commons a naše mapy) aplikace stahuje jen z našeho serveru (Supabase), ne z cizích webů. Supabase přitom stejně jako u webu zpracuje technické údaje v provozních záznamech (viz bod 5). Když zprávu sdílíš jako obrázek, vytvoří ho aplikace přímo v telefonu. Když klepneš na zdroj zprávy nebo na autora fotky, otevře se cizí web (redakce nebo Wikimedia Commons) s vlastními zásadami.</p>
 
       <h3>5. Web dailyfive.cz</h3>
